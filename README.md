@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+LOOM VIDEO: https://drive.google.com/file/d/1KLzogBzn1dV2RoHaNZo-grbQDtpIH4fK/view?usp=sharing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Notes Manager
 
-## Available Scripts
+## Overview
+The **Notes Manager** is a simple React-based application that allows users to create, edit, and delete notes.The notes persist even after refreshing the page using **localStorage**. 
+The application features a clean and minimalistic user interface for easy note management.
 
-In the project directory, you can run:
+## Features
+- Add new notes
+- Edit existing notes
+- Delete notes
+- Persist notes using **localStorage**
+- User-friendly UI with interactive buttons
 
-### `npm start`
+## Technologies Used
+- **React.js** (Functional Components & Hooks)
+- **HTML & CSS** (For UI Styling)
+- **localStorage** (For data persistence)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation and Setup
+To run this project locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Clone the Repository
+```sh
+ git clone https://github.com/your-username/notes-manager.git
+ cd notes-manager
+```
 
-### `npm test`
+### 2. Install Dependencies
+```sh
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Run the Application
+```sh
+npm start
+```
+The app will be available at `http://localhost:3000/` in your browser.
 
-### `npm run build`
+## Code Explanation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **1. Managing State**
+- The `useState` hook is used to manage **notes** and **new note input**.
+- The `useEffect` hook ensures that notes are saved to **localStorage** whenever changes occur.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **2. CRUD Functionality**
+- **Adding Notes**: When a user types a note and clicks **Add**, it gets stored in the notes list.
+- **Editing Notes**: A double-click on a note enables editing mode, allowing users to update the text.
+- **Deleting Notes**: Clicking the trash icon removes the note from the list.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **3. Local Storage Integration**
+- On the first render, saved notes are retrieved from `localStorage`.
+- Every time notes are updated, the new list is stored in `localStorage`.
 
-### `npm run eject`
+## User Interface (UI) Explanation
+The UI is designed to be simple and intuitive:
+- **Header**: Displays the title **Notes Manager**.
+- **Input Field & Add Button**: Allows users to type and save new notes.
+- **List of Notes**: Displays saved notes, each with an **edit** and **delete** button.
+- **Interactive Icons**:
+  - **📝 Pencil Icon**: Enables editing mode.
+  - **🗑 Trash Icon**: Deletes the note.
+- **Double-Click to Edit**: Clicking on a note text enables editing directly.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Compilation Process
+### **1. Code Execution Flow**
+- The **React App** is compiled by Webpack and Babel.
+- JSX is converted into JavaScript during the build process.
+- `npm start` runs the app in **development mode**, and hot-reloading ensures live updates.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **2. How the Code Works Step by Step**
+1. **App Initialization**
+   - React loads the `App` component.
+   - It fetches existing notes from **localStorage**.
+2. **User Interactions**
+   - When a user adds, edits, or deletes a note, the state updates.
+   - The `useEffect` hook ensures changes persist.
+3. **Rendering**
+   - The component updates dynamically based on state changes.
+   - Notes are displayed as a list.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Conclusion
+The Notes Manager is a basic yet effective task management tool demonstrating fundamental React concepts like **state management**, **event handling**, and **localStorage**.
+The UI is user-friendly, and the app efficiently performs CRUD operations on notes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
